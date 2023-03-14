@@ -1,0 +1,130 @@
+:root {
+  --Very-dark-blue: hsl(233, 47%, 7%);
+  --Dark-desaturated-blue: hsl(244, 38%, 16%);
+  --Soft-violet: hsl(277, 64%, 61%);
+  --White: hsl(0, 0%, 100%);
+  --Slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --Slightly-transparent-white: hsla(0, 0%, 100%, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Inter";
+}
+
+body {
+  background-color: var(--Very-dark-blue);
+  height: 100vh;
+  width: 100%;
+}
+
+main {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  background-color: var(--Dark-desaturated-blue);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80%;
+  border-radius: 10px;
+  font-family: "Inter";
+  overflow: hidden;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.wrapper h1 {
+  color: var(--White);
+  margin-bottom: 5%;
+}
+
+.wrapper p {
+  color: var(--Slightly-transparent-white);
+  margin-bottom: 7%;
+  line-height: 1.5;
+}
+
+.figures {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--White);
+}
+
+.figures .figure {
+  text-transform: uppercase;
+}
+
+.figure p {
+  font-size: 10px;
+}
+
+.left {
+  padding: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.right {
+  overflow: hidden;
+  background: linear-gradient(
+      hsla(277, 64%, 61%, 0.735),
+      hsla(277, 64%, 61%, 0.409)
+    ),
+    url(images/image-header-desktop.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.img-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .right {
+    background: linear-gradient(
+        hsla(277, 64%, 61%, 0.735),
+        hsla(277, 64%, 61%, 0.409)
+      ),
+      url(images/image-header-mobile.jpg);
+    background-size: cover;
+    background-position: center;
+   min-height: 40vh;
+  }
+
+  .left {
+    text-align: center;
+  }
+
+  .figures {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .figures .figure {
+    margin-bottom: 5%;
+  }
+
+  img {
+    content: url(images/image-header-mobile.jpg);
+  }
+}
